@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minecraft Server Developer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--p:#5dd6c4;--s:#e8a33d;--bg:#14161a;--card:#1d2026;--tx:#e6e8eb;--mu:#8d96a0;--bd:#343a43}
+.light{--bg:#eef0f2;--card:#fff;--tx:#1b1f24;--mu:#5b6570;--bd:#c9d0d8}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Inter,sans-serif}
+.px{font-family:'Press Start 2P',monospace;line-height:1.6}
+.mono{font-family:'JetBrains Mono',monospace}
+.card{background:var(--card);border:2px solid var(--bd);box-shadow:4px 4px 0 var(--bd)}
+.card:hover{border-color:var(--p);box-shadow:4px 4px 0 var(--p)}
+.btn{background:var(--p);color:#000;padding:.7rem 1.3rem;font-weight:600;border:2px solid #000;box-shadow:4px 4px 0 var(--s)}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--s)}
+.btn2{border:2px solid var(--s);color:var(--s);padding:.7rem 1.3rem;font-weight:600}
+.chip{border:2px solid var(--bd);padding:.4rem .9rem;font-size:.85rem}
+.chip.on{background:var(--p);color:#000;border-color:var(--p)}
+.inp{width:100%;background:var(--bg);border:2px solid var(--bd);padding:.5rem;color:var(--tx)}
+.bar{height:10px;background:var(--bd)}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--p),var(--s))}
+:focus-visible{outline:3px solid var(--s);outline-offset:2px}
+</style>
+</head>
+<body>
+<header class="min-h-screen flex items-center px-6">
+  <div class="max-w-3xl mx-auto w-full">
+    <h1 id="heroTitle" class="px text-2xl md:text-4xl mb-6" style="color:var(--p)"></h1>
+    <p id="heroSub" class="text-lg mb-6" style="color:var(--mu)"></p>
+    <div class="card mono text-sm p-4 mb-8">
+      <div style="color:var(--mu)">[Server thread/INFO]: about.txt</div>
+      <div><span style="color:var(--s)">&lt;Dev&gt;</span> <span id="bio"></span></div>
+    </div>
+    <div class="flex flex-wrap gap-4">
+      <a href="#projects" class="btn">Lihat Proyek</a>
+      <a href="#contact" class="btn2">Kontak</a>
+    </div>
+  </div>
+</header>
+
+<section id="skills" class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="px text-lg mb-8" style="color:var(--s)">Skills</h2>
+  <div id="skillGrid" class="grid grid-cols-2 md:grid-cols-4 gap-5"></div>
+</section>
+
+<section id="projects" class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="px text-lg mb-6" style="color:var(--s)">Portofolio</h2>
+  <div id="filters" class="flex flex-wrap gap-2 mb-8"></div>
+  <div id="projGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</section>
+
+<footer id="contact" class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="px text-lg mb-6" style="color:var(--s)">Kontak</h2>
+  <div id="contactLinks" class="flex flex-wrap gap-4"></div>
+</footer>
+
+<button id="adminBtn" aria-label="Admin login" class="card fixed bottom-4 right-4 w-12 h-12 z-40"><i class="fa-solid fa-lock"></i></button>
+<div id="modal" class="hidden fixed inset-0 z-50 overflow-y-auto p-4" style="background:rgba(0,0,0,.75)">
+  <div id="modalBody" class="card max-w-3xl mx-auto p-6 mt-6"></div>
+</div>
+<div id="toast" class="hidden fixed top-4 left-1/2 -translate-x-1/2 z-[60] px-4 py-2 font-semibold text-black"></div>
+<script src="script.js"></script>
+</body>
+</html>
