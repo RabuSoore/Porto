@@ -1,5 +1,5 @@
 // ====== GANTI DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA ======
-const API_URL = 'PASTE_URL_WEB_APP_DI_SINI';
+const API_URL = 'https://script.google.com/macros/s/AKfycbyRUGFcSsHKPb19_NZq1bp9JSpZCyPv0UT01MuvfO6dMOO8DOAMnbT3Cw45_ka4Kb_6fw/exec';
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
